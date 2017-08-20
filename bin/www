@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/**
+/**   
  * Module dependencies.
  */
 require('babel-register');
@@ -16,7 +16,7 @@ var port = normalizePort(process.env.PORT || '3010');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Create HTTP server.  
  */
 
 var server = http.createServer(app);

@@ -22,13 +22,13 @@ passport.deserializeUser(function(obj,done){
 passport.use(new GitHubStrategy({
     clientID: '2ac39f481b737fea19a4',
     clientSecret: '63e715d444dd2cf74784f98c19126cd5e30920ad',
-    callbackURL: "http://127.0.0.1:5000/auth/github/callback"
+    callbackURL: "http://127.0.0.1:3010/auth/github/callback"
   },
 //   function(accessToken, refreshToken, profile, cb) {
 //     User.findOrCreate({ githubId: profile.id }, function (err, user) {
 //       return cb(err, user);
 //     });
-//   }
+//   }  
 // ));
      function(accessToken,refreshToken,profile,done){
         done(null,profile)
