@@ -28,6 +28,10 @@ router.post('/fetchFavorite', function (req, res) {
                     res.json({ status: 500, error: error })
                     return
                 }
+                if(res.length===0){
+                    iterator(i + 1)
+                    return
+                }
                 User.find({ username: res[0].username }, (error, user) => {
                     if (error) {
                         res.json({ status: 500, error: error })
