@@ -14,5 +14,9 @@ router.post('/userInfo', function (req, res, next) {
         res.send({ status: 200, data: data })
     })
 });
-
+// router.get('/getSession',function(req,res){
+//     console.log(req.session.user)
+    
+//     res.send({status:404})
+// })
 module.exports = router;
