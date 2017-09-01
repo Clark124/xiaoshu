@@ -3,8 +3,6 @@ var router = express.Router();
 var Article = require('../models/article')
 var User = require('../models/user')
 
-
-
 router.post('/', function (req, res) {
     let { page } = req.body
     Article.find({}, null, { skip: page * 5, limit: 5, sort: { "updateTime": -1 } }, (error, result) => {
@@ -45,7 +43,7 @@ router.post('/', function (req, res) {
 
 router.post('/recommendAuthor', function (req, res) {
     let { page } = req.body
-    User.find({}, null, { skip: page * 2, limit: 2, }, (error, result) => {
+    User.find({}, null, { skip: page * 5, limit: 5, }, (error, result) => {
         if (error) {
             res.json({ status: 500, error: error })
             return

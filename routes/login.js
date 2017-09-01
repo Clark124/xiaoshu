@@ -5,6 +5,8 @@ var md5 = require('../models/md5')
 /* GET users listing. */
 
 router.post('/', function (req, res, next) {
+    req.session.login = 'clark'
+    console.log(req.session)
     let { username, password } = req.body
     password = md5(md5(password) + 'Clark')
     User.find({ username }, (error, result) => {

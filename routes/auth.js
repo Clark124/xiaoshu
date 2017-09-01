@@ -4,18 +4,18 @@ var User = require('../models/user')
 var passport = require('passport');
 var GitHubStrategy = require('passport-github').Strategy;
 
-// passport.serializeUser(function (user, done) {
-//     done(null, user);
-// });
+passport.serializeUser(function (user, done) {
+    done(null, user);
+});
 
-// passport.deserializeUser(function (obj, done) {
-//     done(null, obj);
-// })
+passport.deserializeUser(function (obj, done) {
+    done(null, obj);
+})
 
 
 passport.use(new GitHubStrategy({
-    clientID: 'ca34acf861e2fc21de0e',
-    clientSecret: 'e9a40851535684d133d6be6211dbfbb0d5badfda',
+    clientID: '2ac39f481b737fea19a4',
+    clientSecret: '63e715d444dd2cf74784f98c19126cd5e30920ad',
     callbackURL: "http://127.0.0.1:3010/auth/github/callback"
 },
     function (accessToken, refreshToken, profile, done) {

@@ -12,15 +12,15 @@ var articleScheme = new mongoose.Schema({
     "content": String,
     "isAttrubute": Boolean,
     "praise": [String],
-    "hits":Number,
+    "hits": Number,
     "comment": [{
         "username": String,
         "content": String,
         "createTime": String,
         "avatar": String,
-        "support":[String],
-        "userId":String,
-        "reply":[{"username":String,"content":String,"createTime":String}]
+        "support": [String],
+        "userId": String,
+        "reply": [{ "username": String, "content": String, "createTime": String,"userId":String }]
     }],
 })
 
