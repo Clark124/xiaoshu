@@ -29,6 +29,11 @@ router.post('/fetchFavorite', function (req, res) {
                     return
                 }
                 if(res.length===0){
+                    User.update({ userId }, { '$pull': { "favorite": result[0].favorite[i] } }, (error) => {
+                        if (error) {
+                            res.json({ status: 500, error: error })
+                        }
+                    })
                     iterator(i + 1)
                     return
                 }
